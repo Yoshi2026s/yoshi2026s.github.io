@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pococha 記録帳リンク</title>
+<meta name="theme-color" content="#d6336c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&display=swap">
+<style>
+:root{--bg:#f4f5fa;--card:#fff;--line:#dcdfeb;--ink:#1b1f2e;--muted:#636a82;--pink:#d6336c;--pink-soft:#fde4ee;--blue:#3b5bdb;--blue-soft:#e3e9ff}
+@media (prefers-color-scheme:dark){:root{--bg:#12141c;--card:#1b1e29;--line:#323749;--ink:#eceef6;--muted:#9ba2ba;--pink:#f0628f;--pink-soft:#3d1f2c;--blue:#8aa2ff;--blue-soft:#222b4d}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN",system-ui,sans-serif;display:flex;justify-content:center;padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom))}
+main{width:100%;max-width:440px;display:flex;flex-direction:column;gap:14px}
+h1{margin:4px 0 2px;font-size:1.35rem;font-weight:800;text-align:center}
+.sub{margin:0 0 6px;text-align:center;color:var(--muted);font-size:.85rem}
+.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:2px solid var(--line);border-radius:20px;padding:18px;transition:transform .08s}
+.card:active{transform:scale(.98)}
+.card.on{border-color:var(--pink)}
+.card.off{border-color:var(--blue)}
+.top{display:flex;align-items:center;gap:12px}
+.ic{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem}
+.on .ic{background:var(--pink-soft)} .off .ic{background:var(--blue-soft)}
+.name{font-size:1.2rem;font-weight:800}
+.on .name{color:var(--pink)} .off .name{color:var(--blue)}
+.go{margin-left:auto;font-weight:800;font-size:1.4rem;color:var(--muted)}
+ul{margin:12px 0 0;padding-left:1.2em;font-size:.88rem;line-height:1.7;color:var(--ink)}
+ul li::marker{color:var(--muted)}
+.copy{margin-top:12px;width:100%;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:12px;min-height:44px;font:inherit;font-size:.85rem;font-weight:800;cursor:pointer}
+.tip{background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:12px 14px;font-size:.82rem;line-height:1.7;color:var(--muted)}
+.tip b{color:var(--ink)}
+footer{text-align:center;font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Pococha 時間稼ぎ・エール記録帳</h1>
+  <p class="sub">使う方をタップしてください</p>
+
+  <a class="card on" href="https://claude.ai/artifact/V6kYC4zxzHjkcDidTm2eW2">
+    <div class="top"><div class="ic">☁️</div><div class="name">オンライン版</div><div class="go">›</div></div>
+    <ul>
+      <li>記録をクラウドに保存。スマホとPCで同じデータ</li>
+      <li>CSV・ファイル書き出しも使える</li>
+      <li>Claudeへのログインが必要</li>
+    </ul>
+  </a>
+  <button class="copy" data-url="https://claude.ai/artifact/V6kYC4zxzHjkcDidTm2eW2">オンライン版のリンクをコピー</button>
+
+  <a class="card off" href="https://yoshi2026s.github.io/pococha-yell-log/">
+    <div class="top"><div class="ic">📱</div><div class="name">オフライン版</div><div class="go">›</div></div>
+    <ul>
+      <li>ログイン不要ですぐ開ける</li>
+      <li>記録は開いた端末のブラウザだけに保存</li>
+      <li>オンライン版とはデータが別</li>
+    </ul>
+  </a>
+  <button class="copy" data-url="https://yoshi2026s.github.io/pococha-yell-log/">オフライン版のリンクをコピー</button>
+
+  <div class="tip"><b>ホーム画面に追加しておくと便利</b><br>iPhone：Safariでこのページを開き、共有ボタン →「ホーム画面に追加」</div>
+  <footer>© Yoshi1012</footer>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+  const t=b.textContent;
+  try{await navigator.clipboard.writeText(b.dataset.url);b.textContent='コピーしました'}
+  catch(e){b.textContent=b.dataset.url}
+  setTimeout(()=>b.textContent=t,1800);
+}));
+</script>
+</body>
+</html>
