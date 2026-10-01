@@ -23,6 +23,7 @@
 :root{--bg:#f4f5fa;--card:#fff;--line:#dcdfeb;--ink:#1b1f2e;--muted:#636a82;--pink:#d6336c;--pink-soft:#fde4ee;--blue:#3b5bdb;--blue-soft:#e3e9ff;--line-green:#06c755;--x:#111}
 @media (prefers-color-scheme:dark){:root{--bg:#12141c;--card:#1b1e29;--line:#323749;--ink:#eceef6;--muted:#9ba2ba;--pink:#f0628f;--pink-soft:#3d1f2c;--blue:#8aa2ff;--blue-soft:#222b4d;--x:#000}}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN",system-ui,sans-serif;display:flex;justify-content:center;padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom))}
 main{width:100%;max-width:440px;display:flex;flex-direction:column;gap:12px}
 h1{margin:4px 0 2px;font-size:1.35rem;font-weight:800;text-align:center}
@@ -117,7 +118,7 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
       </button>
     </div>
     <div class="qr" id="qrBox">
-      <svg id="qrSvg" viewBox="-2 -2 33 33" role="img" aria-label="このページのQRコード" shape-rendering="crispEdges"></svg>
+      <svg id="qrSvg" viewBox="-4 -4 37 37" role="img" aria-label="このページのQRコード" shape-rendering="crispEdges"></svg>
       <small>スマホのカメラで読み取ると、このページが開きます</small>
       <button class="sb" id="qrSave" style="width:100%">QRコードを画像で保存</button>
     </div>
@@ -174,7 +175,7 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
   });
   var d='';
   grid.forEach(function(row,r){for(var c=0;c<N;c++){if(row[c]==='1'){var s=c;while(c+1<N&&row[c+1]==='1')c++;d+='M'+s+' '+r+'h'+(c-s+1)+'v1h-'+(c-s+1)+'z'}}});
-  document.getElementById('qrSvg').innerHTML='<rect x="-2" y="-2" width="33" height="33" fill="#fff"/><path d="'+d+'" fill="#000"/>';
+  document.getElementById('qrSvg').innerHTML='<rect x="-4" y="-4" width="37" height="37" fill="#fff"/><path d="'+d+'" fill="#000"/>';
 
   var qrBtn=document.getElementById('qrBtn'), qrBox=document.getElementById('qrBox');
   qrBtn.addEventListener('click',function(){
@@ -186,14 +187,18 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
     var g=cv.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,W,W);g.fillStyle='#000';
     grid.forEach(function(row,r){for(var c=0;c<N;c++){if(row[c]==='1')g.fillRect((c+M)*S,(r+M)*S,S,S)}});
     cv.toBlob(function(blob){
+      if(!blob){toast('QRコードの画像を作成できませんでした');return}
       var file=new File([blob],'pococha-kirokucho-qr.png',{type:'image/png'});
-      if(navigator.canShare&&navigator.canShare({files:[file]})){
-        navigator.share({files:[file],title:'QRコード'}).catch(function(){});
-      }else{
+      function downloadQr(){
         var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=file.name;
         document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
         toast('QRコードを保存しました');
       }
+      if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
+        navigator.share({files:[file],title:'QRコード'}).catch(function(e){
+          if(!e||e.name!=='AbortError') downloadQr();
+        });
+      }else{downloadQr()}
     },'image/png');
   });
 })();
