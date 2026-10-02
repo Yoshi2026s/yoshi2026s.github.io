@@ -3,18 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Pococha 時間稼ぎ・エール記録帳</title>
-<meta name="description" content="Pocochaの時間稼ぎ・エールを記録するツール。ログイン不要ですぐ使えます。">
+<title>Pococha 時間稼ぎ・エール記録帳｜オフライン版</title>
+<meta name="description" content="Pocochaの時間稼ぎ・エールを記録するオフライン版。ログイン不要。記録は開いた端末のブラウザに保存します。">
 <meta name="theme-color" content="#d6336c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pococha 記録帳">
-<meta property="og:title" content="Pococha 時間稼ぎ・エール記録帳">
-<meta property="og:description" content="時間稼ぎ・エールを記録するツール。ログイン不要ですぐ使えます。">
+<meta property="og:title" content="Pococha 時間稼ぎ・エール記録帳｜オフライン版">
+<meta property="og:description" content="ログイン不要のオフライン版。記録は開いた端末のブラウザに保存し、端末間では同期しません。">
 <meta property="og:url" content="https://yoshi2026s.github.io/">
-<meta property="og:image" content="https://yoshi2026s.github.io/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23d6336c'/%3E%3Ccircle cx='32' cy='34' r='16' fill='none' stroke='white' stroke-width='5'/%3E%3Cpath d='M32 26v9l6 4M26 12h12' stroke='white' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,16 +28,16 @@ h2{margin:0 0 10px;font-size:1rem;font-weight:800}
 .sub{margin:0 0 4px;text-align:center;color:var(--muted);font-size:.85rem}
 button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .tool{background:var(--card);border:2px solid var(--line);border-radius:20px;overflow:hidden}
-.tool.on{border-color:var(--pink)} .tool.off{border-color:var(--blue)}
+.tool.off{border-color:var(--blue)}
 .open{display:block;text-decoration:none;color:inherit;padding:16px 18px 12px}
 .open:active{background:var(--bg)}
 .top{display:flex;align-items:center;gap:12px}
 .ic{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem}
-.on .ic{background:var(--pink-soft)} .off .ic{background:var(--blue-soft)}
+.off .ic{background:var(--blue-soft)}
 .name{font-size:1.2rem;font-weight:800}
-.on .name{color:var(--pink)} .off .name{color:var(--blue)}
+.off .name{color:var(--blue)}
 .go{margin-left:auto;font-weight:800;font-size:.85rem;color:#fff;border-radius:999px;padding:6px 14px}
-.on .go{background:#d6336c} .off .go{background:#3b5bdb}
+.off .go{background:#3b5bdb}
 ul{margin:10px 0 0;padding-left:1.2em;font-size:.86rem;line-height:1.7}
 ul li::marker{color:var(--muted)}
 .copy{display:block;width:100%;border:0;border-top:1px solid var(--line);background:transparent;color:var(--muted);min-height:44px;font-size:.82rem;font-weight:800}
@@ -71,19 +68,7 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
 <body>
 <main>
   <h1>Pococha 時間稼ぎ・エール記録帳</h1>
-  <p class="sub">使う方をタップしてください</p>
-
-  <div class="tool on">
-    <a class="open" href="https://claude.ai/artifact/V6kYC4zxzHjkcDidTm2eW2">
-      <div class="top"><div class="ic" aria-hidden="true">☁️</div><div class="name">オンライン版</div><div class="go">開く</div></div>
-      <ul>
-        <li>クラウド保存。スマホとPCで同じデータ</li>
-        <li>CSV・ファイル書き出しも使える</li>
-        <li>Claudeへのログインが必要（共有された人のみ）</li>
-      </ul>
-    </a>
-    <button class="copy" data-copy="https://claude.ai/artifact/V6kYC4zxzHjkcDidTm2eW2" data-msg="オンライン版のリンクをコピーしました">オンライン版のリンクをコピー</button>
-  </div>
+  <p class="sub">オフライン版専用リンク</p>
 
   <div class="tool off">
     <a class="open" href="https://yoshi2026s.github.io/pococha-yell-log/">
@@ -91,15 +76,15 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
       <ul>
         <li>ログイン不要。誰でもすぐ使える</li>
         <li>記録は開いた端末のブラウザだけに保存</li>
-        <li>オンライン版とはデータが別</li>
+        <li>バックアップで保存・別の端末へ移行できます</li>
       </ul>
     </a>
     <button class="copy" data-copy="https://yoshi2026s.github.io/pococha-yell-log/" data-msg="オフライン版のリンクをコピーしました">オフライン版のリンクをコピー</button>
   </div>
 
   <section class="share" aria-labelledby="shareH">
-    <h2 id="shareH">このページを友だちに教える</h2>
-    <p>送ったリンクから、オンライン版・オフライン版どちらも選べます</p>
+    <h2 id="shareH">オフライン版を友だちに教える</h2>
+    <p>送ったリンク・QRコードからオフライン版を開けます</p>
     <div class="btns">
       <button class="sb main" id="nativeShare" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>共有する
@@ -131,7 +116,7 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
 <script>
 (function(){
   var PAGE='https://yoshi2026s.github.io/';
-  var TEXT='Pococha 時間稼ぎ・エール記録帳｜ログイン不要ですぐ使える記録ツール';
+  var TEXT='Pococha 時間稼ぎ・エール記録帳｜オフライン版。ログイン不要・端末内保存';
   var toastEl=document.getElementById('toast'), tmr;
   function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tmr);tmr=setTimeout(function(){toastEl.classList.remove('show')},2000)}
 
@@ -157,7 +142,7 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
   if(navigator.share){
     ns.hidden=false;
     ns.addEventListener('click',function(){
-      navigator.share({title:'Pococha 時間稼ぎ・エール記録帳',text:TEXT,url:PAGE}).catch(function(e){
+      navigator.share({title:'Pococha 時間稼ぎ・エール記録帳｜オフライン版',text:TEXT,url:PAGE}).catch(function(e){
         if(e&&e.name!=='AbortError') copy(PAGE,'リンクをコピーしました');
       });
     });
@@ -205,3 +190,4 @@ footer{text-align:center;font-size:.75rem;color:var(--muted)}
 </script>
 </body>
 </html>
+
