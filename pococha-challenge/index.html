@@ -37,16 +37,81 @@ const HAISHIN_MAP='https://haishin-lab.com/sitemap/';
 function missions(words,family=false){const out=[];out.push({need:family?'Ｆ5人':'15人',label:words[0],f:family});out.push({need:'10人',label:'コメント'});out.push({need:'10個',label:'BOX開封'});out.push({need:'1万',label:'いいね長押し'});out.push({need:family?'Ｆ5人':'15人',label:words[1],f:family});out.push({need:'2人',label:'初見コメント'});out.push({need:'2万',label:'いいね長押し'});out.push({need:'15人',label:'コメント'});out.push({need:'15個',label:'BOX開封'});out.push({need:'20人',label:'いいねワンぽち'});out.push({need:'3人',label:'初見コメント'});out.push({need:family?'Ｆ5人':'15人',label:words[2],f:family});out.push({need:'3万',label:'いいね長押し'});return out;}
 
 const DATA={
+'2026-04':{
+ title:'2026年4月',start:'未確認',end:'未確認',
+ verified:{open:true,family:false},
+ confidence:{open:'1サイト確認',family:'未確認'},
+ labels:{open:'🟠オープン',family:'🩷ファミリー'},
+ open:missions(['復活祭','エイプリルフール','入学式']),
+ family:null,
+ lockReason:{family:'ファミリー部門の全13問を確認できる公開サイトが見つかっていないため非表示。'},
+ evidence:[
+  'オープン部門はGTオレンジの記事で全13問を確認できたため、1サイト確認ルールで収録。',
+  '解答：［01］復活祭／［05］エイプリルフール／［12］入学式。',
+  '開始・終了日時は今回確認できる資料では確定できないため「未確認」と表示。',
+  'ファミリー部門は全13問一覧を確認できる公開サイトが未確認。'
+ ],
+ sources:[
+  ['全13問・オープン','GTオレンジ「4月ポコチャレ解答」','https://note.com/gt_orange/n/nb6b568e5d5c0','オープン13問と必要数を確認。'],
+  ['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'公式の確認方法。過去4月の全問一覧ではありません。']
+ ]
+},
+'2026-05':{
+ title:'2026年5月',start:'未確認',end:'未確認',
+ verified:{open:true,family:false},
+ confidence:{open:'1サイト確認',family:'未確認'},
+ labels:{open:'🟠オープン',family:'🩷ファミリー'},
+ open:missions(['メーデー','憲法記念日','みどりの日']),
+ family:null,
+ lockReason:{family:'ファミリー部門の全13問を確認できる公開サイトが見つかっていないため非表示。'},
+ evidence:[
+  'オープン部門はGTオレンジの記事で全13問を確認できたため、1サイト確認ルールで収録。',
+  '解答：［01］メーデー／［05］憲法記念日／［12］みどりの日。',
+  'Pococha公開タグ・SNS公開ミラーでも「憲法記念日」を部分照合。',
+  '開始・終了日時は今回確認できる資料では確定できないため「未確認」と表示。'
+ ],
+ sources:[
+  ['全13問・オープン','GTオレンジ「5月ポコチャレ解答」','https://note.com/gt_orange/n/n87cbeba75728','オープン13問と必要数を確認。'],
+  ['部分照合・Pococha公開タグ','Pococha公開ライブタグ','https://www.pococha.com/en-us/app/users/b377ed81-03a4-4524-b2bf-6b4a931687f8/live-tags','MISSION5「憲法記念日」を部分照合。'],
+  ['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'公式の確認方法。']
+ ]
+},
+'2026-06':{
+ title:'2026年6月',start:'6/11(木)15:00',end:'6/24(水)23:59',
+ verified:{open:true,family:false},
+ confidence:{open:'1サイト全問＋日程別確認',family:'対象なし'},
+ labels:{open:'⚾甲子園',family:'ファミリーなし'},
+ open:[
+  {need:'10人',label:'いいねワンぽち'},{need:'10人',label:'Pococha甲子園'},{need:'10回',label:'BOX開封'},
+  {need:'10人',label:'福岡'},{need:'3人',label:'初見コメント'},{need:'1000',label:'いいね長押し'},
+  {need:'10人',label:'始球式'},{need:'3人',label:'1K以上いいね'},{need:'10人',label:'フェリ'},
+  {need:'10人',label:'BOX開封'},{need:'5人',label:'1K以上コメント'},{need:'10人',label:'コメント'},
+  {need:'9999',label:'いいね長押し'}
+ ],
+ family:null,
+ lockReason:{family:'2026年6月は通常のオープン／withファミリーではなく「甲子園ぽこチャレ」として確認。'},
+ evidence:[
+  'GTオレンジの記事で甲子園ぽこチャレ全13問を確認できたため収録。',
+  '開催日時は同記事に6/11(木)15:00〜6/24(水)23:59と掲載。',
+  'HAISHIN Labでも甲子園ぽこチャレの開催期間6/11〜6/24を確認。',
+  '通常月と問題構成が異なるため、6月専用の13問をそのまま収録。'
+ ],
+ sources:[
+  ['全13問・甲子園','GTオレンジ「6月ポコチャレ甲子園の答え」','https://note.com/gt_orange/n/nddc6a992e59e','甲子園ぽこチャレ13問と開始・終了日時を確認。'],
+  ['開催期間','HAISHIN Lab「Pococha甲子園2026」','https://haishin-lab.com/news/2281/','甲子園ぽこチャレ6/11〜6/24を確認。'],
+  ['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'通常ぽこチャレの確認方法。']
+ ]
+},
 '2026-08':{
  title:'2026年8月',start:'8/7(金)（時刻未確認）',end:'未確認',
- verified:{open:false,family:true},
- open:null,
+ verified:{open:true,family:true},
+ open:missions(['山の日','お盆休み','かき氷']),
  family:missions(['水の日','野球','野菜'],true),
- lockReason:{open:'全13問を載せた独立した2つ目の情報元を確認できていないため非表示。',family:''},
+ lockReason:{},
  evidence:[
   'ファミリー部門は、GTオレンジと「つばさ」の別記事で13問すべてを照合し一致。',
   'Ｆ対象は［01］水の日・［05］野球・［12］野菜。',
-  'オープン部門はGTオレンジに13問ありますが、独立した2つ目の全問資料が見つからないため表示・コピーを停止。',
+  'オープン部門もGTオレンジの記事で全13問を確認できたため、1サイト確認ルールで収録。',
   'オープン［01］山の日は、別記事・公開SNSでも実施例を確認済み。ただし［05］お盆休み・［12］かき氷まで全問照合できていません。',
   '開催開始日は別記事で8/7を確認。開始時刻・終了日時は今回の確認では確定できないため推測していません。'
  ],
@@ -108,9 +173,6 @@ const RESEARCH={
 '2026-01':{title:'2026年1月',note:'全13問を確認できる信頼できる公開資料を複数確認できていません。解答は表示しません。',sources:[['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'過去1月の解答一覧ではありません。']]},
 '2026-02':{title:'2026年2月',note:'ぽこチャレ実施の記録は確認できましたが、2026年2月の全13問を複数資料で照合できません。',sources:[['参加記録','connita の公開note','https://note.com/connita/n/nb7bdbd01723c','2月のwithファミリー参加記録。全問解答ではありません。'],['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'過去2月の解答一覧ではありません。']]},
 '2026-03':{title:'2026年3月',note:'実施・参加記録は確認できましたが、全13問の解答を複数資料で照合できません。',sources:[['参加記録','yama の公開note','https://note.com/yama_pococha/n/nac9054b6f3f3','3月のぽこチャレ参加記録。全問解答ではありません。'],['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'過去3月の解答一覧ではありません。']]},
-'2026-04':{title:'2026年4月',note:'オープン13問を載せた資料は1件確認できましたが、独立した2つ目の全問資料が確認できないため非表示です。ファミリー全問資料も未確認です。',sources:[['全問候補・オープン','GTオレンジ「4月ポコチャレ解答」','https://note.com/gt_orange/n/nb6b568e5d5c0','復活祭・エイプリルフール・入学式を含む13問。単一の全問資料のため確定表示しません。'],['追加検索結果','Yahoo!リアルタイム検索・Ameblo・一般ブログ','https://search.yahoo.co.jp/realtime','2026年4月の「復活祭／エイプリルフール／入学式」を、note・Ameblo・X公開投稿・SNSミラー・一般ブログで追加検索しましたが、全13問を別発信者で再掲した独立資料は確認できませんでした。'],['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'過去4月の解答一覧ではありません。']]},
-'2026-05':{title:'2026年5月',note:'オープン13問を載せた資料は1件あり、別のPococha公開ページで一部のお題も確認できました。ただし全13問の複数照合に達していないため非表示です。',sources:[['全問候補・オープン','GTオレンジ「5月ポコチャレ解答」','https://note.com/gt_orange/n/n87cbeba75728','メーデー・憲法記念日・みどりの日を含む13問。'],['部分照合・Pococha公開タグ','Pococha 公開ライブタグ','https://www.pococha.com/en-us/app/users/b377ed81-03a4-4524-b2bf-6b4a931687f8/live-tags','「ぽこチャレ🆘憲法記念日」の公開タグを確認。MISSION5の答えを部分照合。全問照合ではありません。'],['部分照合・SNS公開ミラー','TwStalker しなぴー公開投稿','https://ww.twstalker.com/shinapy','2026年の公開投稿に「ぽこチャレ🆘憲法記念日コメ」を確認。MISSION5のみの補助資料。Pococha公開タグとSNS公開ミラーの2経路で部分一致を確認。'],['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'過去5月の解答一覧ではありません。']]},
-'2026-06':{title:'2026年6月',note:'通常月ではなく「甲子園ぽこチャレ」。13問の一覧は確認できましたが、全問解答の2ページが同一著者・同内容で、独立照合にならないため確定表示しません。開催期間は公式＋別サイトで照合済みです。',sources:[['全問候補','GTオレンジ「甲子園ぽこチャレ 6月」','https://note.com/gt_orange/n/n08500c3bb941','13問を掲載。'],['同一著者の重複資料','GTオレンジ 別ページ','https://note.com/gt_orange/n/nddc6a992e59e','同一著者・同内容のため独立照合には数えません。'],['公式日程・イベント存在','Pococha公式「Pococha甲子園2026」','https://report.pococha.com/n/n419c96421292','甲子園ぽこチャレの開催期間を確認。'],['日程照合','HAISHIN Lab「Pococha甲子園2026」','https://haishin-lab.com/news/2281/','6/11〜6/24の開催期間を照合。'],['日程照合・別運営','Blue Puddle「Pococha甲子園とは」','https://note.com/bluepuddle_liver/n/n69795c50b502','公式FAQを参照し、甲子園ぽこチャレ6/11〜6/24を別サイトでも確認。']]},
 '2026-07':{title:'2026年7月',note:'通常ぽこチャレ／withファミリーのイベント存在は確認できましたが、全13問の解答資料を複数確認できていません。',sources:[['イベント存在','HAISHIN Lab サイトマップ',HAISHIN_MAP,'「ぽこチャレ7月」「with ファミリー7月」の掲載を確認。'],['追加検索結果','note・Ameblo・一般ブログ・X公開投稿を横断','https://search.yahoo.co.jp/realtime','「ぽこチャレ7月／withファミリー7月／解答／答え」で追加検索しましたが、2026年7月の全13問一覧は確認できませんでした。'],['公式確認先','Pococha公式FAQ「ぽこチャレ」',FAQ,'過去7月の解答一覧ではありません。']]}
 };
 
@@ -118,16 +180,16 @@ const keys=Array.from({length:10},(_,i)=>'2026-'+String(i+1).padStart(2,'0'));
 const $=id=>document.getElementById(id);let current='2026-10';
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function line(m,i){const n=String(i+1).padStart(2,'0');return `［${n}］${m.need} ${m.label}`;}
-function copyText(kind){const d=DATA[current];if(!d||!d.verified?.[kind]||!Array.isArray(d[kind]))return null;const name=kind==='open'?'🟠オープン部門':'🩷ファミリー部門',rows=d[kind].map(line).join('\n');return `【${d.title} ぽこチャレ】\n${name}\n\n開始：${d.start}\n終了：${d.end}\n\n${rows}`;}
-function lockedCard(kind,d,reason){const isOpen=kind==='open',title=isOpen?'🟠オープン':'🩷ファミリー',start=d?.start||'未確認',end=d?.end||'未確認';return `<article class="department ${kind} locked"><div class="department-head"><h2>${title}</h2><div class="period"><span>開始 <b>${esc(start)}</b></span><span>終了 <b>${esc(end)}</b></span></div><span class="verify-chip">複数照合 未完了</span></div><button class="copy-btn" type="button" disabled>照合完了後にコピー</button><div class="locked-note">${esc(reason||'全13問を複数の公開情報で照合できていないため、解答を表示していません。')}</div></article>`;}
-function card(kind,d){if(!d.verified?.[kind]||!Array.isArray(d[kind]))return lockedCard(kind,d,d.lockReason?.[kind]);const isOpen=kind==='open',title=isOpen?'🟠オープン':'🩷ファミリー',lis=d[kind].map((m,i)=>{const num=`［${String(i+1).padStart(2,'0')}］`,need=m.f?`<span class="f">Ｆ</span>${esc(m.need.replace(/^Ｆ/,''))}`:esc(m.need);return `<li class="mission"><span class="num">${num}</span><span class="need">${need}</span><span class="answer">${esc(m.label)}</span></li>`;}).join('');return `<article class="department ${kind}"><div class="department-head"><h2>${title}</h2><div class="period"><span>開始 <b>${esc(d.start)}</b></span><span>終了 <b>${esc(d.end)}</b></span></div></div><button class="copy-btn" type="button" data-copy="${kind}">${isOpen?'オープン':'ファミリー'}をコピー</button><ol class="missions">${lis}</ol></article>`;}
+function copyText(kind){const d=DATA[current];if(!d||!d.verified?.[kind]||!Array.isArray(d[kind]))return null;const name=d.labels?.[kind]||(kind==='open'?'🟠オープン部門':'🩷ファミリー部門'),rows=d[kind].map(line).join('\n');return `【${d.title} ぽこチャレ】\n${name}\n\n開始：${d.start}\n終了：${d.end}\n\n${rows}`;}
+function lockedCard(kind,d,reason){const isOpen=kind==='open',title=d?.labels?.[kind]||(isOpen?'🟠オープン':'🩷ファミリー'),start=d?.start||'未確認',end=d?.end||'未確認';return `<article class="department ${kind} locked"><div class="department-head"><h2>${title}</h2><div class="period"><span>開始 <b>${esc(start)}</b></span><span>終了 <b>${esc(end)}</b></span></div><span class="verify-chip">全問情報 未確認</span></div><button class="copy-btn" type="button" disabled>全13問確認後にコピー</button><div class="locked-note">${esc(reason||'全13問を複数の公開情報で照合できていないため、解答を表示していません。')}</div></article>`;}
+function card(kind,d){if(!d.verified?.[kind]||!Array.isArray(d[kind]))return lockedCard(kind,d,d.lockReason?.[kind]);const isOpen=kind==='open',title=d?.labels?.[kind]||(isOpen?'🟠オープン':'🩷ファミリー'),lis=d[kind].map((m,i)=>{const num=`［${String(i+1).padStart(2,'0')}］`,need=m.f?`<span class="f">Ｆ</span>${esc(m.need.replace(/^Ｆ/,''))}`:esc(m.need);return `<li class="mission"><span class="num">${num}</span><span class="need">${need}</span><span class="answer">${esc(m.label)}</span></li>`;}).join('');return `<article class="department ${kind}"><div class="department-head"><h2>${title}</h2><div class="period"><span>開始 <b>${esc(d.start)}</b></span><span>終了 <b>${esc(d.end)}</b></span></div>${d.confidence?.[kind]?`<span class="verify-chip">${esc(d.confidence[kind])}</span>`:''}</div><button class="copy-btn" type="button" data-copy="${kind}">${isOpen?'オープン':'ファミリー'}をコピー</button><ol class="missions">${lis}</ol></article>`;}
 function sourceHTML(sources){return (sources||[]).map(s=>`<div class="source"><b>${esc(s[0])}</b><br><a href="${esc(s[2])}" target="_blank" rel="noopener noreferrer">${esc(s[1])}</a><small>${esc(s[3])}</small></div>`).join('');}
-function renderSources(d,research=null){const verifiedCount=d?Object.values(d.verified||{}).filter(Boolean).length:0;const checks=`<ul class="checks"><li>✅ 解答を表示する部門は複数の公開情報で照合</li><li>🔎 検索範囲：Pococha公式／HAISHIN Lab／note／Ameblo／一般ブログ／Pococha公開タグ／Yahoo!リアルタイム検索（X公開投稿）／SNS公開ミラー</li><li>✅ 同一著者の重複・ほぼ同文の記事は独立情報元として過大評価しない</li><li>🧩 一部ミッションだけ一致する資料は「部分照合」として記録し、全13問の確定根拠にはしない</li><li>🔁 同一人物・同一記事の転載、検索スニペットの重複は別ソースとして数えない</li><li>🛑 全13問を照合できない部門は解答・コピーを停止</li><li>⚠️ 最終確認はPocochaアプリ内の当該イベント画面を優先</li></ul>`;const src=sourceHTML(d?.sources||research?.sources);$('sourceBody').innerHTML=`${checks}<p><b>照合状況：</b>${d?verifiedCount+'/2部門を表示可能':'解答表示なし・調査記録のみ'}</p><div class="source-list">${src}</div><p class="caution">「候補」と記載した資料だけでは確定扱いにしません。リンク先は更新・削除される可能性があります。</p>`;if(d)$('evidenceBody').innerHTML=`<ul class="checks">${d.evidence.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>コピー文は表示上の折り返しに関係なく、各ミッションを1行で出力します。</p>`;else $('evidenceBody').innerHTML=`<ul class="checks"><li>${esc(research.note)}</li><li>推測で解答を補完しません。追加の独立資料が確認できた時点で収録対象にします。</li></ul>`;}
+function renderSources(d,research=null){const verifiedCount=d?Object.values(d.verified||{}).filter(Boolean).length:0;const checks=`<ul class="checks"><li>✅ 全13問を1つ以上の公開サイトで確認できれば収録</li><li>🔎 検索範囲：Pococha公式／HAISHIN Lab／note／Ameblo／一般ブログ／Pococha公開タグ／Yahoo!リアルタイム検索（X公開投稿）／SNS公開ミラー</li><li>✅ 同一著者の重複・ほぼ同文の記事は独立情報元として過大評価しない</li><li>🧩 一部ミッションだけ一致する資料は「部分照合」として記録し、全13問の確定根拠にはしない</li><li>🔁 複数サイト照合は信頼度を上げる追加確認として扱い、同一人物・同一記事の転載は別ソースとして数えない</li><li>🛑 全13問を確認できる公開サイトがない部門は解答・コピーを停止</li><li>⚠️ 最終確認はPocochaアプリ内の当該イベント画面を優先</li></ul>`;const src=sourceHTML(d?.sources||research?.sources);$('sourceBody').innerHTML=`${checks}<p><b>照合状況：</b>${d?verifiedCount+'/2部門を表示可能':'解答表示なし・調査記録のみ'}</p><div class="source-list">${src}</div><p class="caution">「候補」と記載した資料だけでは確定扱いにしません。リンク先は更新・削除される可能性があります。</p>`;if(d)$('evidenceBody').innerHTML=`<ul class="checks">${d.evidence.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>コピー文は表示上の折り返しに関係なく、各ミッションを1行で出力します。</p>`;else $('evidenceBody').innerHTML=`<ul class="checks"><li>${esc(research.note)}</li><li>推測で解答を補完しません。全13問を確認できる公開サイトが見つかった時点で収録対象にします。</li></ul>`;}
 function researchView(r){return `<article class="department open locked"><div class="department-head"><h2>🟠オープン</h2><span class="verify-chip">照合中</span></div><button class="copy-btn" disabled>解答未収録</button><div class="locked-note">${esc(r.note)}</div></article><article class="department family locked"><div class="department-head"><h2>🩷ファミリー</h2><span class="verify-chip">照合中</span></div><button class="copy-btn" disabled>解答未収録</button><div class="locked-note">複数の全問資料を確認できるまで表示しません。</div></article>`;}
-function setMonth(key,push=true){if(!keys.includes(key))key='2026-10';current=key;$('month').value=key;document.querySelectorAll('details').forEach(x=>x.open=false);[...$('quick').children].forEach(b=>b.setAttribute('aria-current',b.dataset.month===key?'true':'false'));const d=DATA[key],r=RESEARCH[key];if(d){$('departments').innerHTML=card('open',d)+card('family',d);const ok=Object.values(d.verified).filter(Boolean).length;$('status').innerHTML=`<strong>${esc(d.title)}</strong>／複数照合済み ${ok}/2部門`;renderSources(d);}else if(r){$('departments').innerHTML=researchView(r);$('status').innerHTML=`<strong>${esc(r.title)}</strong>／照合未完了・誤情報防止のため解答非表示`;renderSources(null,r);}else{$('departments').innerHTML='<div class="empty">この年月は未調査です。</div>';$('status').textContent='確認できる資料を調査中です。';$('sourceBody').innerHTML='';$('evidenceBody').innerHTML='';}$('prev').disabled=keys.indexOf(key)<=0;$('next').disabled=keys.indexOf(key)>=keys.length-1;if(push){const u=new URL(location.href);u.searchParams.set('month',key);history.replaceState(null,'',u);}}
+function setMonth(key,push=true){if(!keys.includes(key))key='2026-10';current=key;$('month').value=key;document.querySelectorAll('details').forEach(x=>x.open=false);[...$('quick').children].forEach(b=>b.setAttribute('aria-current',b.dataset.month===key?'true':'false'));const d=DATA[key],r=RESEARCH[key];if(d){$('departments').innerHTML=card('open',d)+card('family',d);const ok=Object.values(d.verified).filter(Boolean).length;$('status').innerHTML=`<strong>${esc(d.title)}</strong>／収録済み ${ok}/2部門`;renderSources(d);}else if(r){$('departments').innerHTML=researchView(r);$('status').innerHTML=`<strong>${esc(r.title)}</strong>／照合未完了・誤情報防止のため解答非表示`;renderSources(null,r);}else{$('departments').innerHTML='<div class="empty">この年月は未調査です。</div>';$('status').textContent='確認できる資料を調査中です。';$('sourceBody').innerHTML='';$('evidenceBody').innerHTML='';}$('prev').disabled=keys.indexOf(key)<=0;$('next').disabled=keys.indexOf(key)>=keys.length-1;if(push){const u=new URL(location.href);u.searchParams.set('month',key);history.replaceState(null,'',u);}}
 function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),1900);}
-async function copy(kind){const text=copyText(kind);if(!text){toast('この部門は複数照合が未完了です');return;}try{if(!navigator.clipboard)throw new Error('fallback');await navigator.clipboard.writeText(text);toast(kind==='open'?'オープン部門をコピーしました':'ファミリー部門をコピーしました');}catch(e){let box=document.querySelector('.manual-copy');if(!box){box=document.createElement('textarea');box.className='manual-copy';box.readOnly=true;$('evidenceBody').appendChild(box);}box.value=text;$('answerEvidence').open=true;box.focus();box.select();toast('文章を選択しました。コピーしてください');}}
-$('departments').addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b)copy(b.dataset.copy);});$('refreshPage').addEventListener('click',()=>{toast('更新しています');setTimeout(()=>location.reload(),80);});$('month').addEventListener('change',e=>setMonth(e.target.value));$('prev').addEventListener('click',()=>{const i=keys.indexOf(current);if(i>0)setMonth(keys[i-1]);});$('next').addEventListener('click',()=>{const i=keys.indexOf(current);if(i<keys.length-1)setMonth(keys[i+1]);});$('quick').innerHTML=keys.map(k=>{const d=DATA[k],r=RESEARCH[k],label=d?.title||r?.title||k;const ok=d?Object.values(d.verified).filter(Boolean).length:0;const mark=ok===2?'✓':ok===1?'◐':'…';return `<button type="button" class="quick" data-month="${k}">${label.replace('2026年','')}${mark}</button>`;}).join('');$('quick').addEventListener('click',e=>{const b=e.target.closest('[data-month]');if(b)setMonth(b.dataset.month);});const initial=new URL(location.href).searchParams.get('month');setMonth(keys.includes(initial)?initial:'2026-10',false);
+async function copy(kind){const text=copyText(kind);if(!text){toast('この部門は全13問を確認できる情報元が未確認です');return;}try{if(!navigator.clipboard)throw new Error('fallback');await navigator.clipboard.writeText(text);toast(kind==='open'?'オープン部門をコピーしました':'ファミリー部門をコピーしました');}catch(e){let box=document.querySelector('.manual-copy');if(!box){box=document.createElement('textarea');box.className='manual-copy';box.readOnly=true;$('evidenceBody').appendChild(box);}box.value=text;$('answerEvidence').open=true;box.focus();box.select();toast('文章を選択しました。コピーしてください');}}
+$('departments').addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b)copy(b.dataset.copy);});$('refreshPage').addEventListener('click',()=>{toast('更新しています');setTimeout(()=>location.reload(),80);});$('month').addEventListener('change',e=>setMonth(e.target.value));$('prev').addEventListener('click',()=>{const i=keys.indexOf(current);if(i>0)setMonth(keys[i-1]);});$('next').addEventListener('click',()=>{const i=keys.indexOf(current);if(i<keys.length-1)setMonth(keys[i+1]);});$('quick').innerHTML=keys.map(k=>{const d=DATA[k],r=RESEARCH[k],label=d?.title||r?.title||k;const ok=d?Object.values(d.verified).filter(Boolean).length:0;const mark=ok>=1?'✓':'…';return `<button type="button" class="quick" data-month="${k}">${label.replace('2026年','')}${mark}</button>`;}).join('');$('quick').addEventListener('click',e=>{const b=e.target.closest('[data-month]');if(b)setMonth(b.dataset.month);});const initial=new URL(location.href).searchParams.get('month');setMonth(keys.includes(initial)?initial:'2026-10',false);
 </script>
 </body>
 </html>
