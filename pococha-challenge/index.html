@@ -24,6 +24,9 @@
 .app-header{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:2px 0 12px;padding:16px 16px 12px;border-radius:16px;background:linear-gradient(115deg,#b94b05 0%,#bd2266 100%);color:#fff;box-shadow:0 5px 18px rgba(189,34,102,.18)}
 .app-header h1{margin:0;text-align:center;font-size:clamp(1.5rem,6.8vw,2.5rem);line-height:1.3;font-weight:900;letter-spacing:.04em;color:#fff;text-shadow:0 2px 3px rgba(75,17,34,.16)}
 .header-subrow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.creator-logo{display:inline-flex;align-items:baseline;flex:none;padding:4px 8px;border:1px solid rgba(255,255,255,.45);border-radius:7px;background:rgba(255,255,255,.12);color:#fff;font-size:.75rem;font-weight:900;line-height:1.25;letter-spacing:.02em;white-space:nowrap}
+.creator-logo span{font-size:inherit;letter-spacing:0}
+.header-disclaimer{margin:0;min-width:0;max-width:100%;font-size:.75rem;line-height:1.5;color:#fff;overflow-wrap:anywhere;word-break:normal}
 .app-header .header-note{margin:0;color:#fff;font-size:.7rem}
 .app-header .header-actions{margin-left:auto}
 .app-header .refresh-mini,.app-header .share-mini{background:#fff;border-color:#fff;color:#992143}
@@ -34,7 +37,7 @@
 </head>
 <body>
 <main>
-<header class="app-header"><h1>ポコチャレ解答集</h1><div class="header-subrow"><div class="header-actions"><button class="share-mini" id="sharePage" type="button" aria-label="このページを共有" title="共有">共有</button><button class="refresh-mini" id="refreshPage" type="button" aria-label="最新表示に更新" title="更新">↻</button></div></div></header>
+<header class="app-header"><h1>ポコチャレ解答集</h1><div class="header-subrow"><span class="creator-logo" aria-label="Yoshi1012">Yoshi<span>1012</span></span><div class="header-actions"><button class="share-mini" id="sharePage" type="button" aria-label="このページを共有" title="共有">共有</button><button class="refresh-mini" id="refreshPage" type="button" aria-label="最新表示に更新" title="更新">↻</button></div></div><p class="header-disclaimer"><b>免責事項：</b>非公式の参考情報です。正確性は保証しません。ご利用に伴う損害等の責任は負いかねます。公式アプリの表示を優先してください。</p></header>
 <section class="controls" aria-label="年月選択"><div class="month-row"><button class="nav" id="prev" type="button" aria-label="前月">‹</button><input class="month-input" id="month" type="month" min="2026-01" max="2026-10" value="2026-10" aria-label="表示する年月"><button class="nav" id="next" type="button" aria-label="翌月">›</button></div><div class="quick-row" id="quick"></div></section>
 <section class="departments" id="departments" aria-live="polite"></section>
 </main><div class="toast" id="toast" role="status" aria-live="polite"></div>
