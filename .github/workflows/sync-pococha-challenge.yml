@@ -1,15 +1,10 @@
 name: Sitesからポコチャレ解答集を同期
 
 on:
-  schedule:
-    - cron: '2-57/5 * * * *'
-  workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/sync-pococha-challenge.yml'
-      - '.github/scripts/sync-pococha-challenge.py'
-      - '.github/state/pococha-challenge-sync.json'
+      - '.github/state/pococha-challenge-release.json'
 
 permissions:
   contents: write
