@@ -15,6 +15,7 @@ SOURCE = 'https://pococha-challenge.freefreelife2000.chatgpt.site/github-export.
 PUBLIC = 'https://yoshi2026s.github.io/pococha-challenge/'
 TARGET = Path('pococha-challenge/index.html')
 STATE = Path('.github/state/pococha-challenge-sync.json')
+RELEASE = Path('.github/state/pococha-challenge-release.json')
 LIMIT = 4 * 1024 * 1024
 
 
@@ -48,6 +49,20 @@ def validate(payload):
     if any(value not in content for value in required):
         raise ValueError('The export is not a complete Pococha Challenge application.')
     return data, checksum
+
+
+def read_release():
+    release = json.loads(RELEASE.read_text(encoding='utf-8'))
+    if release.get('schema') != 1 or release.get('projectId') != PROJECT or release.get('deploymentStatus') != 'succeeded':
+        raise ValueError('A successful Sites publication receipt is required.')
+    for field in ('versionId', 'deploymentId'):
+        if not isinstance(release.get(field), str) or not release[field].strip():
+            raise ValueError(f'Missing publication receipt field: {field}')
+    if not isinstance(release.get('sourceCommit'), str) or not re.fullmatch(r'[0-9a-f]{40}', release['sourceCommit']):
+        raise ValueError('The publication source commit is invalid.')
+    if not isinstance(release.get('sha256'), str) or not re.fullmatch(r'[0-9a-f]{64}', release['sha256']):
+        raise ValueError('The publication checksum is invalid.')
+    return release
 
 
 def output(name, value):
@@ -102,7 +117,11 @@ def main():
             if attempt < 23:
                 time.sleep(10)
         raise RuntimeError('The repository is synchronized, but GitHub Pages publication has not been confirmed.')
-    payload = json.loads(args.export_file.read_text(encoding='utf-8') if args.export_file else fetch(SOURCE))
+    release = read_release()
+    payload = json.loads(args.export_file.read_text(encoding='utf-8') if args.export_file else fetch(f"{SOURCE}?release={release['sha256']}"))
+    _, checksum = validate(payload)
+    if checksum != release['sha256']:
+        raise ValueError('The live Sites export does not match the notified publication; no files were overwritten.')
     checksum = sync(payload)
     output('rebuild', False if args.offline else not public_matches(checksum))
 
