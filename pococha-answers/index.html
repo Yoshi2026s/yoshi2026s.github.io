@@ -2,12 +2,16 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-bkXlE1EP1nGDQZURd+BQhHXOh4IhOBK2xurJ5R5M3R0=' 'sha256-ZT8a9kEO1bSW9dLBATM266pRz+QBxPuGnaRTewABr3s=' 'sha256-pNCcdo/yaEGBIAok35q+ajy2Z43cvUM3GUFoqqkarI8='; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://pococha-challenge.freefreelife2000.chatgpt.site; base-uri 'none'; object-src 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-r9SatdNWaZPXYTWFz2m6JEg9z/+eN5u2kAde9ILsmWY=' 'sha256-bkXlE1EP1nGDQZURd+BQhHXOh4IhOBK2xurJ5R5M3R0=' 'sha256-/sGNtYnX7pHVLo2oj6CAB8PwkorImmYDsHg5DEBjjV0=' 'sha256-pNCcdo/yaEGBIAok35q+ajy2Z43cvUM3GUFoqqkarI8='; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://pococha-challenge.freefreelife2000.chatgpt.site; base-uri 'none'; object-src 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#111827">
 <meta name="pococha-sync-project" content="appgprj_6ac5d38d4a1c819198d391565430e75d">
 <title>ポコチャレ解答集</title>
+<!-- Distribution policy: Share only https://yoshi2026s.github.io/pococha-answers/ .
+Unauthorized modification (including AI-assisted modification), file redistribution,
+and rehosting are not permitted. Owner-authorized maintenance is permitted.
+GitHub Terms and third-party rights are unaffected. Client checks are removable. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="ポコチャレ解答集">
 <meta property="og:url" content="https://yoshi2026s.github.io/pococha-answers/">
@@ -67,6 +71,9 @@
 .app-footer>.admin-link[hidden]{display:none}
 @media(max-width:599px){.home-help-body{grid-template-columns:minmax(0,1fr);gap:10px}}
 @media print{.app-header{background:none;color:#111;box-shadow:none;border:1px solid #888}.app-header h1{color:#111;text-shadow:none}.title-tools,.title-panel{display:none!important}}
+.distribution-warning{margin:0 0 10px;padding:12px;border:2px solid var(--danger);border-radius:12px;background:var(--card);font-size:.875rem;line-height:1.6;overflow-wrap:anywhere}
+.distribution-warning h2{margin:0 0 6px;font-size:1rem;color:var(--danger)}.distribution-warning p{margin:0 0 8px}.distribution-warning a{color:var(--blue);font-weight:800}.usage-terms a{color:var(--blue);overflow-wrap:anywhere}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -114,6 +121,11 @@
 </div>
 </section>
 </header>
+<section class="distribution-warning" id="distributionWarning" role="alert" hidden>
+<h2>正規公開先をご利用ください</h2>
+<p>このURLは正規公開先ではありません。所有者の許可のない改変・改造（AI使用を含む）や、ファイルの再配布・別サイトへの再公開は許可していません。</p>
+<a href="https://yoshi2026s.github.io/pococha-answers/" rel="noopener noreferrer">GitHub版を開く</a>
+</section>
 <section class="controls" aria-label="年月選択"><div class="month-row"><button class="nav" id="prev" type="button" aria-label="前月">‹</button><input class="month-input" id="month" type="month" min="2026-01" max="2026-10" value="2026-10" aria-label="表示する年月"><button class="nav" id="next" type="button" aria-label="翌月">›</button></div><div class="quick-row" id="quick"></div></section>
 <section class="notice" aria-label="操作とお問い合わせの案内">
 <ul><li>解答を直接クリックで個別コピー可</li><li>不具合等は最下部のお問い合わせからご連絡下さい。<br>（スクショ添付可）</li></ul>
@@ -124,7 +136,7 @@
 <button class="toolbar-button" id="disclaimerToggle" type="button" aria-expanded="false" aria-controls="footerDisclaimer">免責事項</button>
 <button class="toolbar-button" id="contactToggle" type="button" aria-expanded="false" aria-controls="footerContact">お問い合わせ</button>
 <section class="title-panel" id="footerDisclaimer" aria-labelledby="disclaimerToggle" hidden>
-<div class="title-detail-body"><p>非公式の参考情報です。正確性は保証しません。ご利用に伴う損害等の責任は負いかねます。公式アプリの表示を優先してください。</p><div class="panel-actions"><button class="panel-close" id="closeDisclaimer" type="button" data-close-panel aria-label="免責事項を閉じる">閉じる</button></div><div class="disclaimer-logo"><span class="creator-logo"><svg class="ylogo-svg" viewBox="0 0 267 48" role="img" aria-label="Yoshi1012"><title>Yoshi1012</title><defs><linearGradient id="ylgMeter" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs><circle cx="24" cy="24" r="23" fill="#141827"/><circle cx="24" cy="24" r="20.5" fill="none" stroke="url(#ylgMeter)" stroke-width="4"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"><path d="M15.5 13 24 24 32.5 13"/><path d="M24 24v12"/></g><text id="yoshiLogoName" x="57.694" y="37.5" textLength="109.554" lengthAdjust="spacingAndGlyphs" font-family="Arial, sans-serif" font-size="34" font-weight="800" style="fill:var(--ylt,#1b1f2e)">Yoshi</text><path d="M179.98999999999995 37.5H195.96999999999997V32.604H191.41399999999996V12.169999999999998H186.95999999999998C185.19199999999998 13.291999999999998 183.42399999999998 13.971999999999998 180.70399999999998 14.482V18.221999999999998H185.36199999999997V32.604H179.98999999999995ZM209.61399999999998 37.976C214.95199999999997 37.976 218.55599999999998 33.42 218.55599999999998 24.716C218.55599999999998 16.046 214.95199999999997 11.727999999999998 209.61399999999998 11.727999999999998C204.27599999999998 11.727999999999998 200.63799999999998 16.011999999999997 200.63799999999998 24.716C200.63799999999998 33.42 204.27599999999998 37.976 209.61399999999998 37.976ZM209.61399999999998 33.284C207.81199999999998 33.284 206.34999999999997 31.652 206.34999999999997 24.716C206.34999999999997 17.814 207.81199999999998 16.351999999999997 209.61399999999998 16.351999999999997C211.41599999999997 16.351999999999997 212.84399999999997 17.814 212.84399999999997 24.716C212.84399999999997 31.652 211.41599999999997 33.284 209.61399999999998 33.284ZM223.80199999999996 37.5H239.78199999999998V32.604H235.22599999999997V12.169999999999998H230.772C229.004 13.291999999999998 227.236 13.971999999999998 224.516 14.482V18.221999999999998H229.17399999999998V32.604H223.80199999999996ZM244.48399999999998 37.5H262.02799999999996V32.4H257.404C256.248 32.4 254.51399999999998 32.57 253.25599999999997 32.74C257.132 28.83 260.87199999999996 24.036 260.87199999999996 19.683999999999997C260.87199999999996 14.855999999999998 257.472 11.727999999999998 252.576 11.727999999999998C248.97199999999998 11.727999999999998 246.66 12.985999999999997 244.178 15.637999999999998L247.47599999999997 18.901999999999997C248.7 17.61 250.02599999999998 16.453999999999997 251.76 16.453999999999997C253.79999999999998 16.453999999999997 255.058 17.712 255.058 20.023999999999997C255.058 23.695999999999998 250.808 28.286 244.48399999999998 34.032Z" style="fill:var(--yln,#4338ca)"/></svg></span></div></div>
+<div class="title-detail-body"><p>非公式の参考情報です。正確性は保証しません。ご利用に伴う損害等の責任は負いかねます。公式アプリの表示を優先してください。</p><p class="usage-terms">このツールの共有は<a href="https://yoshi2026s.github.io/pococha-answers/" target="_blank" rel="noopener noreferrer">GitHub版URL</a>のみ許可します。所有者の許可のない改変・改造（AI使用を含む）、ファイルの再配布、別サイトへの再公開は許可していません。解答のコピー機能は利用できます。GitHubの規約上認められる閲覧・forkや第三者の権利を制限するものではありません。</p><div class="panel-actions"><button class="panel-close" id="closeDisclaimer" type="button" data-close-panel aria-label="免責事項を閉じる">閉じる</button></div><div class="disclaimer-logo"><span class="creator-logo"><svg class="ylogo-svg" viewBox="0 0 267 48" role="img" aria-label="Yoshi1012"><title>Yoshi1012</title><defs><linearGradient id="ylgMeter" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs><circle cx="24" cy="24" r="23" fill="#141827"/><circle cx="24" cy="24" r="20.5" fill="none" stroke="url(#ylgMeter)" stroke-width="4"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"><path d="M15.5 13 24 24 32.5 13"/><path d="M24 24v12"/></g><text id="yoshiLogoName" x="57.694" y="37.5" textLength="109.554" lengthAdjust="spacingAndGlyphs" font-family="Arial, sans-serif" font-size="34" font-weight="800" style="fill:var(--ylt,#1b1f2e)">Yoshi</text><path d="M179.98999999999995 37.5H195.96999999999997V32.604H191.41399999999996V12.169999999999998H186.95999999999998C185.19199999999998 13.291999999999998 183.42399999999998 13.971999999999998 180.70399999999998 14.482V18.221999999999998H185.36199999999997V32.604H179.98999999999995ZM209.61399999999998 37.976C214.95199999999997 37.976 218.55599999999998 33.42 218.55599999999998 24.716C218.55599999999998 16.046 214.95199999999997 11.727999999999998 209.61399999999998 11.727999999999998C204.27599999999998 11.727999999999998 200.63799999999998 16.011999999999997 200.63799999999998 24.716C200.63799999999998 33.42 204.27599999999998 37.976 209.61399999999998 37.976ZM209.61399999999998 33.284C207.81199999999998 33.284 206.34999999999997 31.652 206.34999999999997 24.716C206.34999999999997 17.814 207.81199999999998 16.351999999999997 209.61399999999998 16.351999999999997C211.41599999999997 16.351999999999997 212.84399999999997 17.814 212.84399999999997 24.716C212.84399999999997 31.652 211.41599999999997 33.284 209.61399999999998 33.284ZM223.80199999999996 37.5H239.78199999999998V32.604H235.22599999999997V12.169999999999998H230.772C229.004 13.291999999999998 227.236 13.971999999999998 224.516 14.482V18.221999999999998H229.17399999999998V32.604H223.80199999999996ZM244.48399999999998 37.5H262.02799999999996V32.4H257.404C256.248 32.4 254.51399999999998 32.57 253.25599999999997 32.74C257.132 28.83 260.87199999999996 24.036 260.87199999999996 19.683999999999997C260.87199999999996 14.855999999999998 257.472 11.727999999999998 252.576 11.727999999999998C248.97199999999998 11.727999999999998 246.66 12.985999999999997 244.178 15.637999999999998L247.47599999999997 18.901999999999997C248.7 17.61 250.02599999999998 16.453999999999997 251.76 16.453999999999997C253.79999999999998 16.453999999999997 255.058 17.712 255.058 20.023999999999997C255.058 23.695999999999998 250.808 28.286 244.48399999999998 34.032Z" style="fill:var(--yln,#4338ca)"/></svg></span></div></div>
 </section>
 <section class="title-panel" id="footerContact" aria-labelledby="contactToggle" hidden>
 <div class="title-detail-body"><p>このツール専用のスペースからメッセージを送信できます。</p><a class="contact-link" id="contactSpace" href="https://pococha-challenge.freefreelife2000.chatgpt.site/contact" target="_blank" rel="noopener noreferrer">専用お問い合わせを開く</a><div class="panel-actions"><button class="panel-close" id="closeContact" type="button" data-close-panel aria-label="お問い合わせを閉じる">閉じる</button></div></div>
@@ -132,6 +144,24 @@
 <a id="adminPage" class="admin-link" href="https://pococha-challenge.freefreelife2000.chatgpt.site/admin" target="_blank" rel="noopener noreferrer" aria-label="管理ページを新しいタブで開く" title="新しいタブで開く" hidden>管理ページ</a>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script id="distribution-guard">
+// This client-side check is removable. It is a distribution notice, not DRM,
+// proof of AI use, or a report about the person opening the page.
+(() => {
+  const github = location.origin === 'https://yoshi2026s.github.io' && /^\/pococha-(?:answers|challenge)\/(?:index\.html)?$/.test(location.pathname);
+  const sites = location.origin === 'https://pococha-challenge.freefreelife2000.chatgpt.site' && /^\/(?:index\.html)?$/.test(location.pathname);
+  // Keep local development usable. A local preview is not an official release.
+  const preview = location.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+  const permitted = github || sites || preview;
+  Object.defineProperty(globalThis, 'pocochaOfficialContext', { value: permitted, writable: false, configurable: false });
+  if (permitted) return;
+  document.getElementById('distributionWarning').hidden = false;
+  document.querySelector('.controls').hidden = true;
+  document.getElementById('departments').hidden = true;
+  for (const id of ['sharePage', 'refreshPage', 'homeScreenToggle']) document.getElementById(id).disabled = true;
+  // Do not send unauthenticated clone reports, URLs, or personal data.
+})();
+</script>
 <script id="title-panel-controls">
 (() => {
   for (const [toggleId, panelId] of [['homeScreenToggle', 'homeScreenHelp'], ['disclaimerToggle', 'footerDisclaimer'], ['contactToggle', 'footerContact']]) {
@@ -149,8 +179,10 @@
   }
 })();
 </script>
-<script>
+<script id="answers-app">
+(() => {
 'use strict';
+if (!globalThis.pocochaOfficialContext) return;
 document.getElementById('adminPage').hidden=location.origin!=='https://pococha-challenge.freefreelife2000.chatgpt.site';
 if(location.origin==='https://yoshi2026s.github.io'){document.getElementById('contactSpace').href+='?from=github';}
 const FAQ='https://pococha-jp.pococha.com/hc/ja/articles/31868519743385-%E3%81%BD%E3%81%93%E3%83%81%E3%83%A3%E3%83%AC';
@@ -308,7 +340,8 @@ function researchView(){return lockedCard('open')+lockedCard('family');}
 function setMonth(key,push=true){if(!keys.includes(key))key='2026-10';current=key;$('month').value=key;document.querySelector('.manual-copy')?.remove();[...$('quick').children].forEach(b=>b.setAttribute('aria-current',b.dataset.month===key?'true':'false'));const d=DATA[key];$('departments').innerHTML=d?card('open',d)+card('family',d):researchView();$('prev').disabled=keys.indexOf(key)<=0;$('next').disabled=keys.indexOf(key)>=keys.length-1;if(push){const u=new URL(location.href);u.searchParams.set('month',key);history.replaceState(null,'',u);}}
 function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),1900);}
 async function copy(kind,index=null){const text=copyText(kind,index),requestMonth=current;if(!text){toast('未収録');return;}try{if(!navigator.clipboard)throw new Error('fallback');await navigator.clipboard.writeText(text);if(requestMonth===current)toast(index===null?'一括コピーしました':'「'+text+'」をコピーしました');}catch(e){if(requestMonth!==current)return;let box=document.querySelector('.manual-copy');if(!box){box=document.createElement('textarea');box.className='manual-copy';box.readOnly=true;box.setAttribute('aria-label','コピー用テキスト');document.querySelector('main').appendChild(box);}box.value=text;box.focus();box.select();toast('選択しました');}}
-$('departments').addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b)copy(b.dataset.copy,b.dataset.copyIndex===undefined?null:Number(b.dataset.copyIndex));});$('sharePage').addEventListener('click',async()=>{const url=location.href;try{if(navigator.share){await navigator.share({title:'ポコチャレ解答集',text:'ポコチャレ解答集',url});}else if(navigator.clipboard){await navigator.clipboard.writeText(url);toast('URLをコピーしました');}else{throw new Error('fallback');}}catch(e){if(e?.name==='AbortError')return;try{await navigator.clipboard.writeText(url);toast('URLをコピーしました');}catch(_){toast('共有できませんでした');}}});$('refreshPage').addEventListener('click',()=>{toast('更新中');setTimeout(()=>location.reload(),80);});$('month').addEventListener('change',e=>setMonth(e.target.value));$('prev').addEventListener('click',()=>{const i=keys.indexOf(current);if(i>0)setMonth(keys[i-1]);});$('next').addEventListener('click',()=>{const i=keys.indexOf(current);if(i<keys.length-1)setMonth(keys[i+1]);});$('month').min=keys[0];$('month').max=keys[keys.length-1];$('quick').innerHTML=keys.map(k=>{const d=DATA[k],r=RESEARCH[k],label=d?.title||r?.title||k;return `<button type="button" class="quick" data-month="${k}">${label.replace('2026年','')}</button>`;}).join('');$('quick').addEventListener('click',e=>{const b=e.target.closest('[data-month]');if(b)setMonth(b.dataset.month);});const requested=new URL(location.href).searchParams.get('month');const now=new Date();const currentMonth=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;const fallback=keys.filter(k=>k<=currentMonth).pop()||keys[keys.length-1];const initial=keys.includes(requested)?requested:(keys.includes(currentMonth)?currentMonth:fallback);setMonth(initial,false);
+$('departments').addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(b)copy(b.dataset.copy,b.dataset.copyIndex===undefined?null:Number(b.dataset.copyIndex));});$('sharePage').addEventListener('click',async()=>{const shared=new URL('https://yoshi2026s.github.io/pococha-answers/');shared.searchParams.set('month',current);const url=shared.href;try{if(navigator.share){await navigator.share({title:'ポコチャレ解答集',text:'ポコチャレ解答集',url});}else if(navigator.clipboard){await navigator.clipboard.writeText(url);toast('URLをコピーしました');}else{throw new Error('fallback');}}catch(e){if(e?.name==='AbortError')return;try{await navigator.clipboard.writeText(url);toast('URLをコピーしました');}catch(_){toast('共有できませんでした');}}});$('refreshPage').addEventListener('click',()=>{toast('更新中');setTimeout(()=>location.reload(),80);});$('month').addEventListener('change',e=>setMonth(e.target.value));$('prev').addEventListener('click',()=>{const i=keys.indexOf(current);if(i>0)setMonth(keys[i-1]);});$('next').addEventListener('click',()=>{const i=keys.indexOf(current);if(i<keys.length-1)setMonth(keys[i+1]);});$('month').min=keys[0];$('month').max=keys[keys.length-1];$('quick').innerHTML=keys.map(k=>{const d=DATA[k],r=RESEARCH[k],label=d?.title||r?.title||k;return `<button type="button" class="quick" data-month="${k}">${label.replace('2026年','')}</button>`;}).join('');$('quick').addEventListener('click',e=>{const b=e.target.closest('[data-month]');if(b)setMonth(b.dataset.month);});const requested=new URL(location.href).searchParams.get('month');const now=new Date();const currentMonth=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;const fallback=keys.filter(k=>k<=currentMonth).pop()||keys[keys.length-1];const initial=keys.includes(requested)?requested:(keys.includes(currentMonth)?currentMonth:fallback);setMonth(initial,false);
+})();
 </script>
 <script id="daily-visit-tracker">
 (() => {
