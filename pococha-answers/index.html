@@ -22,6 +22,7 @@
 @media(min-width:700px){body{padding-left:18px;padding-right:18px}.departments{gap:14px}.department-head{padding:14px}.missions{padding:0 10px 12px;gap:5px}.mission{font-size:.88rem;min-height:35px;padding:6px 8px}.copy-btn{min-height:44px}.period{font-size:.82rem}}
 @media print{.controls,.copy-btn,.info,footer,.toast{display:none!important}.department{box-shadow:none}.departments{gap:10px}}
 
+.notice{margin:0 0 9px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font-size:.75rem;line-height:1.5;text-align:left;overflow-wrap:anywhere}.notice h2{margin:0 0 4px;font-size:.78rem;line-height:1.3;font-weight:850}.notice ul{margin:0;padding-left:1.25em}.notice li+li{margin-top:3px}
 .copy-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.2}.copy-btn>span{display:block;white-space:nowrap}
 .mission .answer-copy{font:inherit;font-weight:850;letter-spacing:inherit;min-height:24px;flex:1;padding:2px 0;border:0;background:transparent;text-align:left;text-decoration:underline dotted;text-underline-offset:3px;color:var(--ink);cursor:pointer;-webkit-appearance:none;appearance:none}.answer-copy:hover{color:var(--blue)}.answer-copy:active{background:var(--bg);border-radius:3px}.answer-copy:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:3px}
 
@@ -113,6 +114,10 @@
 </section>
 </header>
 <section class="controls" aria-label="年月選択"><div class="month-row"><button class="nav" id="prev" type="button" aria-label="前月">‹</button><input class="month-input" id="month" type="month" min="2026-01" max="2026-10" value="2026-10" aria-label="表示する年月"><button class="nav" id="next" type="button" aria-label="翌月">›</button></div><div class="quick-row" id="quick"></div></section>
+<section class="notice" aria-labelledby="noticeTitle">
+<h2 id="noticeTitle">お知らせ</h2>
+<ul><li>解答クリックで個別コピー可</li><li>不具合等は最下部のお問い合わせからご連絡下さい。<br>（スクショ添付可）</li></ul>
+</section>
 <section class="departments" id="departments" aria-live="polite"></section>
 </main>
 <footer class="app-footer" aria-label="免責事項・お問い合わせ・管理ページ">
