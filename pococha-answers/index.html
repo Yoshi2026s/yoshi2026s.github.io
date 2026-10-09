@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-bkXlE1EP1nGDQZURd+BQhHXOh4IhOBK2xurJ5R5M3R0=' 'sha256-PU21IbX7Ez4K9KFGehTv3YSERKPsbuxbqTiSlzxgx2o=' 'sha256-Q3eX6Ua2hAM4QJxwASbkqovVZfQewhmYTxH1/LUSjPA='; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://pococha-challenge.freefreelife2000.chatgpt.site; base-uri 'none'; object-src 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-bkXlE1EP1nGDQZURd+BQhHXOh4IhOBK2xurJ5R5M3R0=' 'sha256-PU21IbX7Ez4K9KFGehTv3YSERKPsbuxbqTiSlzxgx2o=' 'sha256-pNCcdo/yaEGBIAok35q+ajy2Z43cvUM3GUFoqqkarI8='; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://pococha-challenge.freefreelife2000.chatgpt.site; base-uri 'none'; object-src 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#111827">
@@ -60,7 +60,6 @@
 .app-footer>.admin-link{grid-column:1/-1;justify-self:end;display:inline-flex;align-items:center;min-height:36px;padding:4px 6px;color:var(--blue);font-size:.875rem;text-underline-offset:3px}
 @media(max-width:599px){.home-help-body{grid-template-columns:minmax(0,1fr);gap:10px}}
 @media print{.app-header{background:none;color:#111;box-shadow:none;border:1px solid #888}.app-header h1{color:#111;text-shadow:none}.title-tools,.title-panel{display:none!important}}
-.privacy-tools,.privacy-panel{grid-column:1/-1}.privacy-tools{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}.privacy-tools span{font-size:.68rem}.privacy-choices{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.privacy-choices .panel-close{flex:1;min-height:38px;background:var(--bg);color:var(--ink)}.privacy-panel a{color:var(--blue);overflow-wrap:anywhere}.privacy-panel details{box-shadow:none;margin-top:8px}
 </style>
 </head>
 <body>
@@ -106,29 +105,11 @@
 <button class="toolbar-button" id="disclaimerToggle" type="button" aria-expanded="false" aria-controls="footerDisclaimer">免責事項</button>
 <button class="toolbar-button" id="contactToggle" type="button" aria-expanded="false" aria-controls="footerContact">お問い合わせ</button>
 <section class="title-panel" id="footerDisclaimer" aria-labelledby="disclaimerToggle" hidden>
-<div class="title-detail-body"><p>非公式の参考情報です。正確性は保証しません。ご利用に伴う損害等の責任は負いかねます。公式アプリの表示を優先してください。</p><p>来訪者統計は任意の許可後だけ記録します。生IP・市区町村・具体的な端末機種の新規保存は停止しました。目的・保存期間・撤回方法は下部の「統計・プライバシー設定」で確認できます。お問い合わせ内容は統計と別に保存し、確認用リンクを持つ送信者と管理者だけが閲覧できます。</p><div class="panel-actions"><button class="panel-close" id="closeDisclaimer" type="button" data-close-panel aria-label="免責事項を閉じる">閉じる</button></div></div>
+<div class="title-detail-body"><p>非公式の参考情報です。正確性は保証しません。ご利用に伴う損害等の責任は負いかねます。公式アプリの表示を優先してください。</p><p>Cookieによる匿名集計に加え、IPアドレス・IPから推定される地域・ブラウザーが提供する端末機種を記録します。IPを含む詳細は管理者だけが閲覧し、今日を含む直近7日分を表示します。古いIP記録はアクセス記録時・管理画面の読み込み時に削除します。地域・機種の集計値は保持します。来訪統計には氏名・GPS・お問い合わせ内容・完全な参照元URLを保存しません。専用お問い合わせでは入力したお名前とメッセージを保存し、確認用リンクを持つ送信者と管理者が閲覧できます。</p><div class="panel-actions"><button class="panel-close" id="closeDisclaimer" type="button" data-close-panel aria-label="免責事項を閉じる">閉じる</button></div></div>
 </section>
 <section class="title-panel" id="footerContact" aria-labelledby="contactToggle" hidden>
 <div class="title-detail-body"><p>このツール専用のスペースからメッセージを送信できます。</p><a class="contact-link" id="contactSpace" href="https://pococha-challenge.freefreelife2000.chatgpt.site/contact" target="_blank" rel="noopener noreferrer">専用お問い合わせを開く</a><div class="panel-actions"><button class="panel-close" id="closeContact" type="button" data-close-panel aria-label="お問い合わせを閉じる">閉じる</button></div></div>
 </section>
-
-<div class="privacy-tools"><span id="privacyStatus" role="status" aria-live="polite">統計：停止中</span><button class="panel-close" id="privacyToggle" type="button" aria-expanded="false" aria-controls="privacyPanel">統計・プライバシー設定</button></div>
-<section class="title-panel privacy-panel" id="privacyPanel" aria-label="統計とプライバシーの設定" hidden>
-<div class="title-detail-body"><p><strong>利用統計への協力は任意です。</strong>許可するまで統計の送信と識別用Cookieの作成は行いません。拒否しても解答集を利用できます。</p>
-<p>許可した場合、日別の利用状況を確認するため、日時・公開先・端末／OS／ブラウザー／参照元の大分類・国を集計します。生IP・市区町村・具体的な端末機種は、このツールの統計DBへ新規保存しません。</p>
-<div class="privacy-choices"><button class="panel-close" id="allowStatistics" type="button">許可する</button><button class="panel-close" id="declineStatistics" type="button">許可しない・撤回する</button></div>
-<p>いつでもこの欄で変更できます。選択の有効期間は、この公開先・ブラウザーで30日です。追跡拒否設定（DNT／GPC）がある場合は停止します。</p>
-<details><summary>プライバシー方針・保存期間</summary><div class="detail-body">
-<p>運営：Yoshi1012。目的：日別の利用状況の確認と、解答集の表示・使いやすさの改善。広告、販売、個人の行動履歴の作成、問い合わせ情報との照合には使用しません。</p>
-<p>統計用IDは許可後に公開先ごとのCookieへ保存し、次の日本時間0時まで（最長24時間）で期限切れになります。DBには日付・公開先で切り替わるHMACを保存し、生のCookie IDは保存しません。ID・イベントの重複排除用記録は今日と前2日、集計値は今日を含む365日以内を対象とします。</p>
-<p>端末区分・OS名・ブラウザー名は粗い分類です。完全なUser-Agent、正確なモデルやバージョン、完全な参照元URL、閲覧URLのクエリやハッシュ、GPSは統計DBへ保存しません。国は配信基盤の推定で、VPNなどにより実際と異なる場合があります。少人数の組み合わせから個人を推定する用途は禁止します。</p>
-<p>統計は所有者の認証がある管理画面だけで閲覧します。更新前に記録したIPは従来どおり今日を含む7日以内の管理者専用記録で、新規記録は停止します。以前の詳細分類の集計値も365日以内の期限を適用します。期限を超えた記録は、統計記録時または管理画面読取時に削除するため、アクセスがない間は削除が遅れます。</p>
-<p>撤回すると、この公開先の統計用Cookieを削除し、待機中の再送を停止します。すでに受信・集計した表示回数は取り消せません。日をまたぐ個人の追跡や実人数の特定は行わず、別端末・別ブラウザー・別公開先は別集計です。拒否・通信遮断などにより全来訪者の統計ではありません。</p>
-<p>Sites版はOpenAIのChatGPT Sites、GitHub版はGitHub Pagesを利用し、許可後の統計送信先・保存先はSitesです。通信に必要なIPの処理や配信基盤のログは各事業者の方針が適用されます。このツールの統計DBで保存しないことと、基盤全体で処理しないことは異なります。<a href="https://openai.com/policies/chatgpt-sites-terms/" target="_blank" rel="noopener noreferrer">Sites規約</a>・<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener noreferrer">GitHub Pagesの説明</a></p>
-<p>ご質問・記録の取扱いに関するご相談は<a href="https://pococha-challenge.freefreelife2000.chatgpt.site/contact" target="_blank" rel="noopener noreferrer">専用お問い合わせ</a>へ。問い合わせは任意の呼び名・件名・本文を別に保存し、確認用リンクを持つ送信者と管理者だけでやり取りします。集計値を個人の特定・照合に利用しません。記録の取扱いはお問い合わせへご相談ください。</p>
-<p>方針更新日：2026年10月9日。この方針はツールの統計処理を説明するもので、事業者の規約や法令への適合保証ではありません。</p>
-</div></details>
-<div class="panel-actions"><button class="panel-close" id="closePrivacy" type="button">閉じる</button></div></div></section>
 <a id="adminPage" class="admin-link" href="https://pococha-challenge.freefreelife2000.chatgpt.site/admin" target="_blank" rel="noopener noreferrer" aria-label="管理ページを新しいタブで開く" title="新しいタブで開く">管理ページ</a>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -311,80 +292,19 @@ $('departments').addEventListener('click',e=>{const b=e.target.closest('[data-co
 </script>
 <script id="daily-visit-tracker">
 (() => {
-  'use strict';
   const endpoint = 'https://pococha-challenge.freefreelife2000.chatgpt.site/api/visits';
   const github = location.origin === 'https://yoshi2026s.github.io' && /^\/pococha-(?:answers|challenge)\/(?:index\.html)?$/.test(location.pathname);
   const sites = location.origin === 'https://pococha-challenge.freefreelife2000.chatgpt.site' && /^\/(?:index\.html)?$/.test(location.pathname);
   if (!github && !sites) return;
-  const key = 'pococha_answers_statistics_choice_v1';
-  const preferenceLifetime = 30 * 86400000;
-  const cookieName = 'pococha_answers_daily_vid';
-  const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-  const $ = id => document.getElementById(id);
-  const panel = $('privacyPanel'), toggle = $('privacyToggle'), status = $('privacyStatus');
-  let preference = null, storageAvailable = true, started = false, retryTimer = null, controller = null, generation = 0;
-  function readPreference() {
-    try {
-      const value = JSON.parse(localStorage.getItem(key));
-      if (value?.version === 1 && typeof value.allowed === 'boolean' && Number.isFinite(value.expires) && value.expires > Date.now() && value.expires <= Date.now() + preferenceLifetime) return value;
-    } catch { storageAvailable = false; }
-    return null;
-  }
-  preference = readPreference();
-  const privacySignal = () => navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true;
-  const eligible = () => window.self === window.top && !navigator.webdriver && !!globalThis.crypto?.randomUUID;
-  const allowed = () => {
-    if (storageAvailable) preference = readPreference();
-    if (preference && preference.expires <= Date.now()) preference = null;
-    return preference?.allowed === true && !privacySignal() && eligible();
-  };
-  function clearIdentifiers() {
-    for (const name of ['pococha_challenge_vid', cookieName]) for (const path of ['/', '/pococha-answers/', '/pococha-challenge/']) {
-      try { document.cookie = name + '=; Path=' + path + '; Max-Age=0; SameSite=Lax; Secure'; } catch { /* Cookie access can be blocked. */ }
+  try { globalThis.localStorage?.removeItem('pococha_answers_statistics_choice_v1'); } catch { /* Device storage may be unavailable. */ }
+  try {
+    if (document.cookie.split(';').some(part => part.trim().startsWith('pococha_answers_daily_vid='))) {
+      for (const path of ['/', '/pococha-answers/', '/pococha-challenge/']) document.cookie = 'pococha_answers_daily_vid=; Path=' + path + '; Max-Age=0; SameSite=Lax; Secure';
     }
-  }
-  function cancel() {
-    generation += 1;
-    if (retryTimer !== null) clearTimeout(retryTimer);
-    retryTimer = null;
-    controller?.abort(); controller = null;
-    clearIdentifiers();
-  }
-  function showPanel(open, focus = false) {
-    if (panel) panel.hidden = !open;
-    toggle?.setAttribute('aria-expanded', String(open));
-    if (!open && focus) toggle?.focus();
-  }
-  function render() {
-    const permitted = allowed();
-    if (status) status.textContent = privacySignal() ? '統計：追跡拒否設定により停止' : preference?.allowed ? '統計：許可中' : '統計：停止中';
-    const grant = $('allowStatistics'); if (grant) grant.disabled = privacySignal();
-    if (!permitted) cancel();
-  }
-  function choose(value) {
-    preference = { version: 1, allowed: value, expires: Date.now() + preferenceLifetime };
-    try { localStorage.setItem(key, JSON.stringify(preference)); } catch { storageAvailable = false; }
-    if (!value) cancel();
-    render(); showPanel(false, true); track();
-  }
-  toggle?.addEventListener('click', () => { render(); showPanel(panel?.hidden !== false); });
-  $('allowStatistics')?.addEventListener('click', () => { if (!privacySignal()) choose(true); });
-  $('declineStatistics')?.addEventListener('click', () => choose(false));
-  $('closePrivacy')?.addEventListener('click', () => showPanel(false, true));
-  window.addEventListener('storage', event => {
-    if (event.key !== key && event.key !== null) return;
-    preference = readPreference(); render(); track();
-  });
-  // Abort pending work on navigation without removing a consented daily cookie.
-  window.addEventListener('pagehide', () => {
-    generation += 1;
-    if (retryTimer !== null) clearTimeout(retryTimer);
-    retryTimer = null; controller?.abort(); controller = null;
-  });
-  // Remove the old one-year identifier even when a new consent is present.
-  for (const path of ['/', '/pococha-answers/', '/pococha-challenge/']) {
-    try { document.cookie = 'pococha_challenge_vid=; Path=' + path + '; Max-Age=0; SameSite=Lax; Secure'; } catch { /* No stored identifier is required. */ }
-  }
+  } catch { /* The restored collector supports blocked Cookie access. */ }
+  if (window.self !== window.top || navigator.webdriver || navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true || !globalThis.crypto?.randomUUID) return;
+  const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  let started = false;
   function metadata() {
     const ua = navigator.userAgent || '';
     const tablet = /iPad|Tablet/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1) || (/Android/i.test(ua) && !/Mobile/i.test(ua));
@@ -395,45 +315,64 @@ $('departments').addEventListener('click',e=>{const b=e.target.closest('[data-co
     try {
       if (document.referrer) {
         const host = new URL(document.referrer).hostname.toLowerCase();
-        const is = domain => host === domain || host.endsWith('.' + domain);
+        const is = (domain) => host === domain || host.endsWith('.' + domain);
         referrer = host === location.hostname ? 'internal' : is('google.com') || is('google.co.jp') || is('bing.com') || is('yahoo.co.jp') || is('duckduckgo.com') ? 'search' : is('instagram.com') ? 'instagram' : is('x.com') || is('twitter.com') || is('t.co') ? 'x' : is('tiktok.com') ? 'tiktok' : is('line.me') || is('lin.ee') ? 'line' : is('facebook.com') || is('fb.com') ? 'facebook' : is('youtube.com') || is('youtu.be') ? 'youtube' : is('chatgpt.com') || is('chatgpt.site') ? 'chatgpt' : 'other';
       }
     } catch { referrer = 'unknown'; }
-    return { version: 4, device, os, browser, referrer };
+    let model = /iPhone/i.test(ua) ? 'iphone' : os === 'ios' && tablet ? 'ipad' : /iPod/i.test(ua) ? 'ipod' : os === 'android' ? 'android' : device === 'desktop' ? 'pc' : 'unknown';
+    if (os === 'android' && ua.includes('Build/')) {
+      const legacy = ua.split('Build/')[0].match(/;\s*([^;()]+?)\s*$/)?.[1]?.trim();
+      if (legacy && legacy !== 'K' && legacy.length <= 80 && /^[A-Za-z0-9][A-Za-z0-9 ._()+/-]*$/.test(legacy)) model = 'reported:' + legacy;
+    }
+    const browserPattern = { edge: /Edg(?:e|A|iOS)?\/(\d+)/i, samsung: /SamsungBrowser\/(\d+)/i, opera: /(?:OPR|OPiOS|Opera)\/(\d+)/i, firefox: /(?:Firefox|FxiOS)\/(\d+)/i, chrome: /(?:Chrome|CriOS)\/(\d+)/i, safari: /Version\/(\d+)/i }[browser];
+    const browserMajor = ua.match(browserPattern || /$^/)?.[1] || '';
+    const osMajor = os === 'ios' ? ua.match(/(?:CPU (?:iPhone )?OS|iPhone OS) (\d+)/i)?.[1] || '' : os === 'android' ? ua.match(/Android\s+(\d+)/i)?.[1] || '' : os === 'windows' ? 'NT' + (ua.match(/Windows NT\s+(\d+)/i)?.[1] || '') : os === 'macos' ? ua.match(/Mac OS X (\d+)/i)?.[1] || '' : '';
+    return { version: 3, device, os, browser, referrer, model, browserMajor, osMajor };
   }
   function visitorId() {
     try {
-      const day = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
-      const read = () => document.cookie.split(';').map(part => part.trim()).find(part => part.startsWith(cookieName + '='))?.slice(cookieName.length + 1);
+      const read = () => document.cookie.split(';').map((part) => part.trim()).find((part) => part.startsWith('pococha_challenge_vid='))?.slice('pococha_challenge_vid='.length);
       const existing = read();
-      if (existing?.startsWith(day + '.') && uuid.test(existing.slice(11))) return existing.slice(11).toLowerCase();
-      const id = crypto.randomUUID(), value = day + '.' + id;
+      if (existing && uuid.test(existing)) return existing.toLowerCase();
+      const id = crypto.randomUUID();
       const cookiePath = github ? (location.pathname.startsWith('/pococha-answers/') ? '/pococha-answers/' : '/pococha-challenge/') : '/';
-      const nextMidnight = Date.parse(day + 'T00:00:00+09:00') + 86400000;
-      const maxAge = Math.max(1, Math.min(86400, Math.ceil((nextMidnight - Date.now()) / 1000)));
-      document.cookie = cookieName + '=' + value + '; Path=' + cookiePath + '; Max-Age=' + maxAge + '; SameSite=Lax; Secure';
-      return read() === value ? id : null;
+      document.cookie = `pococha_challenge_vid=${id}; Path=${cookiePath}; Max-Age=31536000; SameSite=Lax; Secure`;
+      return read() === id ? id : null;
     } catch { return null; }
   }
   function track() {
-    if (!allowed()) { cancel(); return; }
     if (started || document.visibilityState !== 'visible') return;
     started = true;
-    const payload = { consent: true, consentVersion: 1, eventId: crypto.randomUUID(), visitorId: visitorId(), page: location.origin + location.pathname, meta: metadata() };
-    const body = JSON.stringify(payload), currentGeneration = generation; let attempt = 0;
-    async function send() {
-      retryTimer = null;
-      if (currentGeneration !== generation || !allowed()) { render(); return; }
-      attempt += 1; controller = typeof AbortController === 'function' ? new AbortController() : null;
-      try {
-        const result = await fetch(endpoint, { method: 'POST', credentials: 'omit', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body, keepalive: true, ...(controller ? { signal: controller.signal } : {}) });
-        if (result.status >= 500 && attempt < 2 && currentGeneration === generation && allowed()) retryTimer = setTimeout(send, 1500);
-      } catch { if (attempt < 2 && currentGeneration === generation && allowed()) retryTimer = setTimeout(send, 1500); }
+    document.removeEventListener('visibilitychange', track);
+    const meta = metadata();
+    const payload = { eventId: crypto.randomUUID(), visitorId: visitorId(), page: location.origin + location.pathname, meta };
+    function submit() {
+      const body = JSON.stringify(payload);
+      let attempt = 0;
+      async function send() {
+        attempt += 1;
+        try {
+          const result = await fetch(endpoint, { method: 'POST', credentials: 'omit', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body, keepalive: true });
+          if (result.status >= 500 && attempt < 2) setTimeout(send, 1500);
+        } catch { if (attempt < 2) setTimeout(send, 1500); }
+      }
+      void send();
     }
-    void send();
+    if (meta.os === 'android' && typeof navigator.userAgentData?.getHighEntropyValues === 'function') {
+      // Do not delay counting indefinitely when model hints are unavailable or blocked.
+      let timeout;
+      const fallback = new Promise(resolve => { timeout = setTimeout(() => resolve(null), 500); });
+      Promise.race([Promise.resolve().then(() => navigator.userAgentData.getHighEntropyValues(['model', 'platformVersion'])).catch(() => null), fallback]).then(hints => {
+        if (typeof globalThis.clearTimeout === 'function') clearTimeout(timeout);
+        const model = hints?.model;
+        if (typeof model === 'string' && model.length <= 80 && /^[A-Za-z0-9][A-Za-z0-9 ._()+/-]*$/.test(model) && !/^(?:k|unknown|generic|android|iphone|ipad|ipod|pc)$/i.test(model.trim())) meta.model = 'reported:' + model.trim();
+        if (typeof hints?.platformVersion === 'string' && /^\d{1,3}(?:\.\d+)*$/.test(hints.platformVersion)) meta.osMajor = hints.platformVersion.split('.')[0];
+        submit();
+      });
+    } else submit();
   }
-  document.addEventListener('visibilitychange', () => { render(); track(); });
-  render(); showPanel(preference === null && !privacySignal()); track();
+  document.addEventListener('visibilitychange', track);
+  track();
 })();
 </script>
 </body>
